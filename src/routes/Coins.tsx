@@ -19,11 +19,29 @@ const Header = styled.header`
   align-items: center;
 `;
 
+const DivWrapper = styled.div`
+  width: 33%;
+`;
+
+const ToggleDiv = styled.div`
+  padding: 10px;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  background-color: cadetblue;
+  color: ${(props) => props.theme.textColor};
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
 const CoinsList = styled.ul``;
 
 const Coin = styled.li`
   background-color: white;
-  color:${(props) => props.theme.textColor};
+  color:${(props) => props.theme.accentColor};
   border-radius: 15px;
   margin-bottom: 10px;
   a{
@@ -38,6 +56,7 @@ const Coin = styled.li`
     }
   }
 `;
+
 
 const Title = styled.h1`
   font-size: 48px;
@@ -88,8 +107,13 @@ function Coins({}:ICoinsProps){
         <title>코인</title>  
       </Helmet>
       <Header>
-        <Title>코인</Title>
-        <button onClick={toggleDarkAtom}>Toggle Mode</button>
+        <DivWrapper />
+        <DivWrapper>
+          <Title>코인</Title>
+        </DivWrapper>
+        <DivWrapper>
+          <ToggleDiv onClick={toggleDarkAtom}>Toggle Mode</ToggleDiv>
+        </DivWrapper>
       </Header>
       {isLoading ? ( <Loader>Loading...</Loader>) : <CoinsList>
         {data?.slice(0, 100).map(coin => (
