@@ -10,8 +10,8 @@ function Router({}: IRouterProps){
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/:coinId/*" element={<Coin />}/>
-        <Route path="/" element={<Coins />} />
+        <Route path="/react-coin/" element={<Coins />} />
+        <Route path="/react-coin/:coinId/*" element={<Coin />}/>
       </Routes>
     </BrowserRouter>
   );
