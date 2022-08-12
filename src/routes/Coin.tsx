@@ -195,7 +195,7 @@ function Coin(){
       <Header>
         <DivWrapper>
           <BackDiv>
-            <Link to="/">Back</Link>
+            <Link to="/react-coin/">Back</Link>
           </BackDiv>
         </DivWrapper>
         <Title>{state?.name ? state.name : loading ? "Loading..." : infoData?.name}</Title>
